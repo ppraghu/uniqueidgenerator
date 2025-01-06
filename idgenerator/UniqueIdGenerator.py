@@ -36,7 +36,7 @@ class UniqueIdGenerator:
             current_datetime.replace(second=0, microsecond=0) + timedelta(minutes=1)
         timediff = datetime_rounded_to_next_min - current_datetime;
         timediff_secs = math.ceil(timediff.total_seconds());
-        print(f"Sleeping for {timediff_secs} secs");
+        print(f"Current time {current_datetime} - Sleeping for {timediff_secs} secs");
         time.sleep(timediff_secs);
 
     def still_in_current_minute(self):
@@ -49,10 +49,13 @@ class UniqueIdGenerator:
     def get_next_id(self):
         current_datetime = self.get_current_datetime();
         if (self.next_id > self.max):
+            self.sleep_remaining_seconds();
+            """
             if (self.still_in_current_minute()):
                 self.sleep_remaining_seconds();
             else:
                 print("No need to sleep");
+            """
             self.do_id_reset();
         current_datetime = self.get_current_datetime();
         asup_id_last4chars = "{:04d}".format(self.next_id);
