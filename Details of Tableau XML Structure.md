@@ -1,3 +1,12 @@
+# Prompt:
+ 
+This is a XML file corresponding to a Tableau report. Can you explain to me different constructs within this XML file? Also, create a diagram in Markdown with mermaid to explain the report structure and its components.
+ 
+---
+---
+ 
+# Response:
+
 ## **1. Overview of the XML Structure**
 
 The XML file represents a Tableau workbook, detailing data sources, worksheets, maps, styles, and window configurations. Here's a high-level breakdown of its main sections:
